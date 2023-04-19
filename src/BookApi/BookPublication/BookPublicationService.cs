@@ -6,6 +6,6 @@ public sealed class BookPublicationService
 
     public BookPublicationService(IServiceProvider serviceProvider) => _serviceProvider = serviceProvider;
 
-    public string Upload<TBook>(TBook book) where TBook : Book
+    public string Publish<TBook>(TBook book) where TBook : Book
         => _serviceProvider.GetRequiredService<IBookPublicationStrategy<TBook>>().Publish(book);
 }

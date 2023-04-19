@@ -24,8 +24,8 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/publish", ([FromServices] BookPublicationService service)
     => Results.Ok(new
     {
-        BookA = service.Upload(new BookA("Story time")),
-        BookB = service.Upload(new BookB("Story time: part 2"))
+        BookA = service.Publish(new BookA("Story time")),
+        BookB = service.Publish(new BookB("Story time: part 2"))
     }))
 .WithName("publish")
 .WithOpenApi();
